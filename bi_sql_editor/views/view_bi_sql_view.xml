@@ -109,7 +109,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <page name="page_sql" position="after">
                 <page string="SQL Fields" invisible="state == 'draft'">
                     <field name="bi_sql_view_field_ids" nolabel="1" colspan="4">
-                        <tree editable="bottom">
+                        <list editable="bottom">
                             <field name="sequence" widget="handle" />
                             <field name="name" />
                             <field name="sql_type" />
@@ -160,7 +160,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 readonly="state == 'ui_valid'"
                             />
                             <field name="state" column_invisible="1" />
-                        </tree>
+                        </list>
                     </field>
                 </page>
             </page>
@@ -246,7 +246,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">SQL Views</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">bi.sql.view</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem

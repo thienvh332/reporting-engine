@@ -149,9 +149,8 @@ class BiSQLViewField(models.Model):
     # Compute Section
     def _compute_index_name(self):
         for sql_field in self:
-            sql_field.index_name = "{}_{}".format(
-                sql_field.bi_sql_view_id.view_name,
-                sql_field.name,
+            sql_field.index_name = (
+                f"{sql_field.bi_sql_view_id.view_name}_{sql_field.name}"
             )
 
     # Overload Section
