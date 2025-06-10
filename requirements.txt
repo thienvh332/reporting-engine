@@ -1,5 +1,5 @@
 # generated from manifests external_dependencies
-lxml
+mock
 openpyxl
-xlrd
-xlsxwriter
+py3o.formats
+py3o.template

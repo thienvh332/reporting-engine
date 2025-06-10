@@ -9,7 +9,6 @@
     "version": "18.0.1.0.0",
     "development_status": "Mature",
     "license": "AGPL-3",
-    "external_dependencies": {"python": ["xlsxwriter", "xlrd"]},
     "depends": ["base", "web"],
     "demo": ["demo/report.xml"],
     "installable": True,

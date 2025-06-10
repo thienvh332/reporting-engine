@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from psycopg2 import ProgrammingError
 from psycopg2.sql import SQL, Identifier
@@ -150,6 +150,7 @@ class BiSQLView(models.Model):
         comodel_name="ir.cron",
         help="Cron Task that will refresh the materialized view",
         ondelete="cascade",
+        copy=False,
     )
 
     rule_id = fields.Many2one(string="Odoo Rule", comodel_name="ir.rule")
@@ -488,7 +489,7 @@ class BiSQLView(models.Model):
             return self.name
         return "{} ({})".format(
             self.name,
-            datetime.utcnow().strftime("%m/%d/%Y %H:%M:%S UTC"),
+            datetime.now(timezone.utc).strftime("%m/%d/%Y %H:%M:%S UTC"),
         )
 
     def _prepare_menu(self):
